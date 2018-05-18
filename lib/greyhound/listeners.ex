@@ -21,8 +21,7 @@ defmodule Greyhound.Listeners do
   Registers a pid to a topic.
 
   Once registered, a process will be linked and monitored by the registry.
-  If a listener process is stopped it will automatically be removed from the
-  registry.
+  If a listener process is stopped it will automatically be removed.
 
   ## Example
 

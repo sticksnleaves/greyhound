@@ -19,7 +19,7 @@ defmodule Greyhound.Supervisor do
                 busses simultaneously make sure this value is different for each
                 supervisor. (e.g. `MyApp.Bus`)
 
-  See `Greyhound` for details on accessing a bus directly.
+  See `Greyhound` for details on using a bus directly.
   """
 
   use Supervisor
