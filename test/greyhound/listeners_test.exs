@@ -17,7 +17,7 @@ defmodule Greyhound.ListenersTest do
     end
 
     def handle_info(:init, %{server: server, spy: spy} = state) do
-      if Greyhound.ready?(server) do
+      if Greyhound.started?(server) do
         :ok = Greyhound.Listeners.add(server, "a_topic", self())
 
         send(spy, :inited)
