@@ -49,7 +49,8 @@ defmodule Greyhound.Supervisor do
 
   defp children(opts) do
     [
-      {Greyhound.Listeners, opts}
+      {Greyhound.Listeners, opts},
+      {Greyhound.Event.Runner, opts}
     ]
   end
 
