@@ -29,7 +29,7 @@ defmodule Greyhound.Supervisor do
   #
 
   @doc "Starts a bus and links it to the current process."
-  @spec start_link(list) :: Supervisor.on_start()
+  @spec start_link(Keyword.t()) :: Supervisor.on_start()
   def start_link(opts) do
     verify_opts!(opts)
 
