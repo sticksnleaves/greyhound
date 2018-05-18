@@ -77,7 +77,7 @@ defmodule Greyhound.Listeners do
   end
 
   @doc false
-  @spec start_link(list) :: GenServer.on_start()
+  @spec start_link(Keyword.t()) :: GenServer.on_start()
   def start_link(opts) do
     name =
       opts
