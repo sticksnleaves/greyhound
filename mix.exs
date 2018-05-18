@@ -19,8 +19,8 @@ defmodule Greyhound.MixProject do
 
   defp deps do
     [
-      {:dialyxir, ">= 0.0.0", only: :dev},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 end
