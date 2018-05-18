@@ -29,7 +29,7 @@ defmodule Greyhound.Event.Worker do
   end
 
   def handle_info(:work, %{event: event, middleware: middleware, config: opts} = state) do
-    Enum.each(middleware, fn m -> m.call(event, opts) end)
+    Enum.each(middleware, fn m -> :ok = m.call(event, opts) end)
 
     {:stop, :normal, state}
   end
