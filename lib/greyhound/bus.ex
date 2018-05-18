@@ -4,8 +4,17 @@ defmodule Greyhound.Bus do
       @otp_app Keyword.fetch!(unquote(opts), :otp_app)
 
       @application_config Application.get_env(@otp_app, __MODULE__, [])
-      
+
       @name Keyword.get(unquote(opts), :name, __MODULE__)
+
+      @doc false
+      def child_spec(arg) do
+        %{
+          id: __MODULE__,
+          start: {__MODULE__, :start_link, [arg]},
+          type: :supervisor
+        }
+      end
 
       @spec start_link(Keyword.t()) :: Supervisor.on_start()
       def start_link(opts) do
