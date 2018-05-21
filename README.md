@@ -9,11 +9,3 @@ def deps do
   ]
 end
 ```
-
-## Defining an event bus
-
-```elixir
-defmodule MyApp.Bus do
-  use Greyhound.Bus, otp_app: :my_app
-end
-```
