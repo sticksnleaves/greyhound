@@ -8,7 +8,8 @@ defmodule Greyhound.MixProject do
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      elixirc_paths: elixirc_paths(Mix.env)
+      elixirc_paths: elixirc_paths(Mix.env),
+      package: package()
     ]
   end
 
@@ -27,4 +28,16 @@ defmodule Greyhound.MixProject do
 
   defp elixirc_paths(:test), do: ["lib", "test", "test/support"]
   defp elixirc_paths(_env), do: ["lib", "test"]
+
+  defp package do
+    [
+      description: "Extensible event bus platform",
+      files: ["lib", "config", "mix.exs", "README.md"],
+      licenses: ["MIT"],
+      links: %{
+        GitHub: "https://github.com/sticksnleaves/greyhound"
+      },
+      maintainers: ["Anthony Smith"]
+    ]
+  end
 end
