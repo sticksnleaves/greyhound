@@ -50,3 +50,11 @@ MyProject.Bus.dispatch("a_topic", "a message")
 
 # listener should print "a_topic" and "a message"
 ```
+
+## Middleware
+
+All dispatching logic is handled by middleware. Middleware can be customized by
+overriding the `__middleware__/0` function on a bus. The default middleware
+dispatches events sequentially to all listeners on the local node.
+
+https://github.com/sticksnleaves/greyhound/blob/master/lib/greyhound/middleware/dispatch/local.ex
